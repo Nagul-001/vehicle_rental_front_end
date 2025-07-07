@@ -1,0 +1,44 @@
+import React, { useState } from "react";
+import { CustomerContactDto } from "../models/customer";
+import { signup } from "../service/customer";
+import "./signup.css";
+
+const Signup: React.FC = () => {
+  const [formData, setFormData] = useState<CustomerContactDto>({
+    fullName: "",
+    licenseNumber: "",
+    phoneNumber: "",
+    email: "",
+    address: "",
+    password: "",
+  });
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const res = await signup(formData);
+    setMessage(res);
+  };
+
+  return (
+    <div className="form-container">
+      <h2>Signup</h2>
+      <form onSubmit={handleSubmit}>
+        <input name="fullName" placeholder="Full Name" onChange={handleChange} required />
+        <input name="licenseNumber" placeholder="License Number" onChange={handleChange} />
+        <input name="phoneNumber" placeholder="Phone Number" onChange={handleChange} required />
+        <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
+        <input name="address" placeholder="Address" onChange={handleChange} />
+        <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
+        <button type="submit">Signup</button>
+      </form>
+      <p>{message}</p>
+    </div>
+  );
+};
+
+export default Signup;
