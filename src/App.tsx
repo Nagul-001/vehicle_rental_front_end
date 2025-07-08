@@ -10,7 +10,7 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> ✅ Replaced inline style */}
+        <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/login" element={<LoginForm />} />
       </Routes>
