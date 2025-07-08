@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import { Vehicle } from "../models/vehicle";
 import { getAllVehicles } from "../service/vehicle-service";
 import "./vehicles.css";
+import { useNavigate } from "react-router-dom";
 
 const Vehicles: React.FC = () => {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchVehicles = async () => {
@@ -15,6 +17,11 @@ const Vehicles: React.FC = () => {
 
     fetchVehicles();
   }, []);
+
+  const handleNavigateRent = (vehicleId:number) => {
+    console.log(vehicleId)
+    navigate("/rent", { state: { vehicleId } });
+  }
 
   return (
     <div className="vehicles-container">
@@ -27,6 +34,7 @@ const Vehicles: React.FC = () => {
           <p>Year: {vehicle.year}</p>
           <p>Rate: ₹{vehicle.rentalRate}/day</p>
           <p>Status: {vehicle.status}</p>
+          {vehicle.status == "available" && <button onClick={()=>handleNavigateRent(vehicle.vehicleId)}>Rent</button>}
         </div>
       ))}
     </div>

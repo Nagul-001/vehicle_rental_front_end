@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { CustomerContactDto } from "../models/customer";
+
 import { login } from "../service/customer";
 import "./login.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { CustomerModel } from "../models/customer";
 
 
 const LoginForm: React.FC = () => {
-  const [credentials, setCredentials] = useState<Partial<CustomerContactDto>>({
+  const [credentials, setCredentials] = useState<Partial<CustomerModel.CustomerContactDto>>({
     email: "",
     password: "",
   });
@@ -21,11 +22,14 @@ const LoginForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (credentials.email && credentials.password) {
-      const res = await login(credentials as CustomerContactDto);
-      setMessage(res);
-      console.log(res);
-      if (res === "Login successful") {
+      const res = await login(credentials as CustomerModel.CustomerContactDto) as CustomerModel.Retval;
+      
+      if (res.code===200) {
+        localStorage.setItem("userId",JSON.stringify(res.data));
         navigate("/Home"); 
+      }
+      else{
+        setMessage(res.message);
       }
     }
   };

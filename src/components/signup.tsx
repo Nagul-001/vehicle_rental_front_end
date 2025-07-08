@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CustomerContactDto } from "../models/customer";
+import { CustomerModel } from "../models/customer";
 import { signup } from "../service/customer";
 import "./signup.css";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const Signup: React.FC = () => {
-  const [formData, setFormData] = useState<CustomerContactDto>({
+  const [formData, setFormData] = useState<CustomerModel.CustomerContactDto>({
     fullName: "",
     licenseNumber: "",
     phoneNumber: "",
