@@ -1,0 +1,37 @@
+.header {
+  background-color: #1f2937;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+  text-align: center;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.nav {
+  margin-top: 0.5rem;
+}
+
+.nav-link {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}

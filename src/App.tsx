@@ -3,16 +3,18 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/header";
 import SignupForm from "./components/signup";
 import LoginForm from "./components/login";
-// import Home from "./components/home"; 
+import Home from "./components/home"; 
+import Vehicles from "./components/vehicle";
 
 const App: React.FC = () => {
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<SignupForm />} />
-        <Route path="/login" element={<LoginForm />} />
+        <Route path="/Home" element={<Home />} />
+        <Route  path="/signup" element={<SignupForm />} />
+        <Route  path="/" element={<LoginForm />} />
+        <Route path="/vehicles" element={<Vehicles />} />
       </Routes>
     </Router>
   );

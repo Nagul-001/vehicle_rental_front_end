@@ -8,7 +8,7 @@ export const signup = async (data: CustomerContactDto) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  return res.json();
+  return res.text();
 };
 
 export const login = async (data: CustomerContactDto) => {
@@ -17,5 +17,5 @@ export const login = async (data: CustomerContactDto) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  return res.json();
+  return res.text();
 };

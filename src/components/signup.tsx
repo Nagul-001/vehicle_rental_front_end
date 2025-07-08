@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { CustomerContactDto } from "../models/customer";
 import { signup } from "../service/customer";
 import "./signup.css";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const Signup: React.FC = () => {
   const [formData, setFormData] = useState<CustomerContactDto>({
@@ -13,6 +16,7 @@ const Signup: React.FC = () => {
     password: "",
   });
   const [message, setMessage] = useState("");
+  const navigate = useNavigate(); 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,10 +26,17 @@ const Signup: React.FC = () => {
     e.preventDefault();
     const res = await signup(formData);
     setMessage(res);
-  };
+
+    if (res === "Signup successful") {
+      navigate("/Home"); 
+    }
+  }
 
   return (
     <div className="form-container">
+      <div className="form-nav">
+       
+      </div>
       <h2>Signup</h2>
       <form onSubmit={handleSubmit}>
         <input name="fullName" placeholder="Full Name" onChange={handleChange} required />
@@ -37,8 +48,10 @@ const Signup: React.FC = () => {
         <button type="submit">Signup</button>
       </form>
       <p>{message}</p>
+       <Link to="/" className="form-nav-link">Already have an account? Login</Link>
     </div>
   );
 };
+
 
 export default Signup;
