@@ -8,13 +8,16 @@ const Sidebar: React.FC = () => {
       <h2 className="sidebar-title">Rental App</h2>
       <ul className="sidebar-links">
         <li>
-          <Link to="/home">🏠 Home</Link>
+          <Link to="/home"> Home</Link>
         </li>
         <li>
-          <Link to="/vehicles">🚗 Vehicles</Link>
+          <Link to="/vehicles"> Vehicles</Link>
         </li>
         <li>
-          <Link to="/rent">📝 Rent</Link>
+          <Link to="/rent"> Rent</Link>
+        </li>
+        <li>
+          <Link to="/return"> Renturn</Link>
         </li>
       </ul>
     </div>

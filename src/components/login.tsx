@@ -40,8 +40,8 @@ const LoginForm: React.FC = () => {
       </div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
-        <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
+        <input name="email" type="email" placeholder="Email" onChange={handleChange} required className="input-field"/>
+        <input name="password" type="password" placeholder="Password" onChange={handleChange} className="input-field" required />
         <button type="submit">Login</button>
       </form>
       <p>{message}</p>

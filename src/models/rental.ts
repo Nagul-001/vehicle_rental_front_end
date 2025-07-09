@@ -4,7 +4,7 @@ import { Vehicle } from "./vehicle";
 
 export namespace RentalModel{
     export interface Rental extends CustomerModel.Customer{
-  rentalId?: number;
+  rentalId: number;
   customer: CustomerModel.Customer;
   vehicle: Vehicle;
   rentDate: string;

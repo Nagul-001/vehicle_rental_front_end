@@ -54,15 +54,16 @@ const RentVehicle: React.FC = () => {
     const total = days * selectedVehicle.rentalRate;
 
     const rental: RentalModel.Rental = {
-        customer ,
-        vehicle: selectedVehicle,
-        rentDate:formData.rentDate,
-        returnDate:formData.returnDate,
-        totalAmount: total,
-        status: "rented",
-        customerId: 0,
-        fullName: "",
-        licenseNumber: ""
+      customer,
+      vehicle: selectedVehicle,
+      rentDate: formData.rentDate,
+      returnDate: formData.returnDate,
+      totalAmount: total,
+      status: "rented",
+      customerId: 0,
+      fullName: "",
+      licenseNumber: "",
+      rentalId: 0
     };
 
     try {
