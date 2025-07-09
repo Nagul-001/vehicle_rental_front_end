@@ -7,7 +7,7 @@ import Home from "./components/home/home";
 import Vehicles from "./components/vehicle/vehicle";
 import RentVehicle from "./components/rental/rental";
 import "./App.css";
-import ProtectedRoute from "./components/protectedRoutes";
+import ProtectedRoute from "./components/protected-routes";
 import ReturnVehicle from "./components/return/return-vehicle";
 import MyProfile from "./components/user/user";
 
@@ -27,6 +27,7 @@ const App: React.FC = () => {
           <Route path="/rent" element={<RentVehicle />} />
           <Route path="/return" element={<ReturnVehicle />} />
           <Route path="/profile" element={<MyProfile />} />
+
         </Route>
       </Routes>
     </Router>

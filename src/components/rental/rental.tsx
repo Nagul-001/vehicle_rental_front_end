@@ -1,16 +1,15 @@
 
 import React, { useEffect, useState } from "react";
-import { Vehicle } from "../../models/vehicle";
 import { RentalModel } from "../../models/rental";
 import { CustomerModel} from "../../models/customer";
 import { getAllVehicles } from "../../service/vehicle-service";
 import { createRental } from "../../service/rental-service";
 import "./rental.css";
 import { useLocation } from "react-router-dom";
-import LogoutButton from "../logout/logout";
+import { VehicleInterface } from "../../models/vehicle";
 
 const RentVehicle: React.FC = () => {
-  const [vehicles, setVehicles] = useState<Vehicle[]>([]);
+  const [vehicles, setVehicles] = useState<VehicleInterface.Vehicle[]>([]);
 
   const [message, setMessage] = useState("");
   const location = useLocation();
@@ -26,7 +25,7 @@ const RentVehicle: React.FC = () => {
   useEffect(() => {
     const fetchVehicles = async () => {
       const data = await getAllVehicles();
-      const available = data.filter((v:Vehicle) => v.status === "available");
+      const available = data.filter((v:VehicleInterface.Vehicle) => v.status === "available");
       setVehicles(available);
     };
     fetchVehicles();
@@ -113,7 +112,7 @@ const RentVehicle: React.FC = () => {
       />
       <button onClick={handleRent}>Rent</button>
       <p>{message}</p>
-      <LogoutButton />
+      
     </div>
   );
 };

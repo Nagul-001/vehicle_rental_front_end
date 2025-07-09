@@ -4,6 +4,7 @@
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
+    background-color:  rgb(180, 197, 192);
   }
   input {
     width: 100%;

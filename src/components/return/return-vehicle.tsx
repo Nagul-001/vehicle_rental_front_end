@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { RentalModel } from "../../models/rental";
 import { getRentalById, returnRental } from "../../service/rental-service";
 import "./return-vehicle.css";
-import LogoutButton from "../logout/logout";
+
 
 const ReturnVehicle: React.FC = () => {
   const [rental, setRental] = useState<RentalModel.Rental[] | null>(null);
@@ -57,7 +57,7 @@ const ReturnVehicle: React.FC = () => {
         <p>Loading rental info...</p>
       )}
       <p>{message}</p>
-      <LogoutButton />
+     
     </div>
   );
 };

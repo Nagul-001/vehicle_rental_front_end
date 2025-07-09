@@ -1,4 +1,3 @@
-import { Vehicle } from "../models/vehicle";
 
 const BASE_URL = "http://localhost:8080";
 

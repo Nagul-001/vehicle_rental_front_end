@@ -1,36 +1,15 @@
-import React, { useState } from "react";
-import { CustomerModel } from "../../models/customer";
-import { signup } from "../../service/customer";
+import React from "react";
 import "./signup.css";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import SignUpService from "../../service/signup-service";
 
 
 const Signup: React.FC = () => {
-  const [formData, setFormData] = useState<CustomerModel.CustomerContactDto>({
-    fullName: "",
-    licenseNumber: "",
-    phoneNumber: "",
-    email: "",
-    address: "",
-    password: "",
-  });
-  const [message, setMessage] = useState("");
-  const navigate = useNavigate(); 
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const res = await signup(formData);
-    setMessage(res);
-
-    if (res === "Signup successful") {
-      navigate("/Home"); 
-    }
-  }
+  const {
+      handleChange,
+      handleSubmit,
+      message
+  }=SignUpService()
 
   return (
     <div className="form-container">

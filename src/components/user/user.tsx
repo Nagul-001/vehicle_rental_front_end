@@ -68,7 +68,7 @@ const handleDelete = async () => {
         <form onSubmit={handleUpdate}>
           <label>
             Name:
-            <input name="fullName" value={user.fullName} onChange={handleChange} required />
+            <input name="fullName" value={user.fullName} onChange={handleChange}  />
           </label>
           <label>
             License Number:
@@ -76,11 +76,11 @@ const handleDelete = async () => {
           </label>
           <label>
             Phone Number:
-            <input name="phoneNumber" value={user.phoneNumber} onChange={handleChange} required />
+            <input name="phoneNumber" value={user.phoneNumber} onChange={handleChange}  />
           </label>
           <label>
             Email:
-            <input name="email" type="email" value={user.email} onChange={handleChange} required />
+            <input name="email" type="email" value={user.email} onChange={handleChange}  />
           </label>
           <label>
             Address:
@@ -88,7 +88,7 @@ const handleDelete = async () => {
           </label>
           <label>
             Password:
-            <input name="password" type="password" value={user.password} onChange={handleChange} required />
+            <input name="password" type="password" value={user.password} onChange={handleChange}  />
           </label>
           <button type="submit" className="update-btn">Save</button>
           <button type="button" onClick={() => setIsEditMode(false)}>Cancel</button>

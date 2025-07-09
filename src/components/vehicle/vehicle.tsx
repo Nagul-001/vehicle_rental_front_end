@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 import "./vehicles.css";
 import { useNavigate } from "react-router-dom";
 import { getAllVehicles } from "../../service/vehicle-service";
-import { Vehicle } from "../../models/vehicle";
+import { VehicleInterface } from "../../models/vehicle";
+
 
 const Vehicles: React.FC = () => {
-  const [vehicles, setVehicles] = useState<Vehicle[]>([]);
+  const [vehicles, setVehicles] = useState<VehicleInterface.Vehicle[]>([]);
   const navigate = useNavigate()
 
   useEffect(() => {

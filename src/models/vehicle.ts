@@ -1,5 +1,6 @@
+export namespace VehicleInterface{
 
-export interface VehicleBrand {
+  export interface VehicleBrand{
   brandId: number;
   brandName: string;
   
@@ -16,4 +17,7 @@ export interface Vehicle {
   createdAt: string;
   modifiedAt: string;
 }
+}
+
+
 

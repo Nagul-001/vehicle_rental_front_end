@@ -11,14 +11,6 @@ export const signup = async (data: CustomerModel.CustomerContactDto) => {
   return res.text();
 };
 
-export const login = async (data: CustomerModel.CustomerContactDto) => {
-  const res = await fetch(`${BASE_URL}/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-  return res.json();
-};
 
 export const getCustomer = async (userId: number) => {
   const res = await fetch(`${BASE_URL}/${userId}`);
