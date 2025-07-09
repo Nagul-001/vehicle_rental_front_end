@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import { login } from "../service/customer";
+import { login } from "../../service/customer";
 import "./login.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { CustomerModel } from "../models/customer";
+import { CustomerModel } from "../../models/customer";
 
 
 const LoginForm: React.FC = () => {

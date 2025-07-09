@@ -1,11 +1,12 @@
 
 import React, { useEffect, useState } from "react";
-import { RentalModel } from "../models/rental";
-import { getRentalById, returnRental } from "../service/rental-service";
+import { RentalModel } from "../../models/rental";
+import { getRentalById, returnRental } from "../../service/rental-service";
 import "./return-vehicle.css";
+import LogoutButton from "../logout/logout";
 
 const ReturnVehicle: React.FC = () => {
-  const [rental, setRental] = useState<RentalModel.Rental | null>(null);
+  const [rental, setRental] = useState<RentalModel.Rental[] | null>(null);
   const [message, setMessage] = useState("");
 
   const rentalIdStr = localStorage.getItem("lastRentalId");
@@ -29,11 +30,11 @@ const ReturnVehicle: React.FC = () => {
     fetchRental();
   }, [rentalId]);
 
-  const handleReturn = async () => {
+  const handleReturn = async (rentalId:number) => {
     if (!rental) return;
 
     try {
-      await returnRental(rental.rentalId);
+      await returnRental(rentalId);
       setMessage("Vehicle returned successfully!");
     } catch (error) {
       setMessage("Error while returning vehicle.");
@@ -43,17 +44,20 @@ const ReturnVehicle: React.FC = () => {
   return (
     <div className="rent-form">
       <h2>Return Vehicle</h2>
-      {rental ? (
+      {rental ? rental.map((rental)=>{
+        return (
         <div>
           <p><strong>Vehicle:</strong> {rental.vehicle.brand.brandName} - {rental.vehicle.model}</p>
           <p><strong>Rental Period:</strong> {rental.rentDate} to {rental.returnDate}</p>
           <p><strong>Total Amount:</strong> ₹{rental.totalAmount}</p>
-          <button onClick={handleReturn}>Return</button>
+          <button onClick={()=>handleReturn(rental.rentalId)}>Return</button>
         </div>
-      ) : (
+      )
+      })  : (
         <p>Loading rental info...</p>
       )}
       <p>{message}</p>
+      <LogoutButton />
     </div>
   );
 };

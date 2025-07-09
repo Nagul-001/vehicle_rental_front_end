@@ -1,0 +1,70 @@
+.profile-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.update-btn,
+.delete-btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+  
+}
+
+.update-btn {
+
+  background-color: #1d41a3;
+  color: white;
+  width: 30%;
+}
+
+.update-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  width: 30%;
+}
+
+.delete-btn:hover {
+  background-color: #b02a37;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+}

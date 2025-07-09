@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { CustomerModel } from "../models/customer";
-import { signup } from "../service/customer";
+import { CustomerModel } from "../../models/customer";
+import { signup } from "../../service/customer";
 import "./signup.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";

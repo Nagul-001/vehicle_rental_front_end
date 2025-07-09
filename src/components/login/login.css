@@ -17,6 +17,8 @@
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    
   }
 .form-nav {
   text-align: right;

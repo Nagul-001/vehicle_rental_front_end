@@ -19,7 +19,7 @@ export const createRental = async (rental: RentalModel.Rental)=> {
 
 
 export const getRentalById = async (rentalId: number) => {
-  const response = await fetch(`${BASE_URL}/${rentalId}`);
+  const response = await fetch(`${BASE_URL}/all-rentals`);
   if (!response.ok) throw new Error("Failed to fetch rental");
   return await response.json();
 };

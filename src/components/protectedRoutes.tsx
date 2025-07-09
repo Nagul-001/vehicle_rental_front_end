@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import Sidebar from './sidebar';
+import Sidebar from './sidebar/sidebar';
 
 const ProtectedRoute: React.FC = () => {
   const isAuthenticated: boolean = !!localStorage.getItem('userId');

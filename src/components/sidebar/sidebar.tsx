@@ -17,7 +17,10 @@ const Sidebar: React.FC = () => {
           <Link to="/rent"> Rent</Link>
         </li>
         <li>
-          <Link to="/return"> Renturn</Link>
+          <Link to="/return"> Return</Link>
+        </li>
+        <li>
+          <Link to="/profile"> My Profile</Link>
         </li>
       </ul>
     </div>

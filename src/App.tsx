@@ -1,14 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/header";
-import SignupForm from "./components/signup";
-import LoginForm from "./components/login";
-import Home from "./components/home";
-import Vehicles from "./components/vehicle";
-import RentVehicle from "./components/rental";
+import Header from "./components/header/header";
+import SignupForm from "./components/signup/signup";
+import LoginForm from "./components/login/login";
+import Home from "./components/home/home";
+import Vehicles from "./components/vehicle/vehicle";
+import RentVehicle from "./components/rental/rental";
 import "./App.css";
 import ProtectedRoute from "./components/protectedRoutes";
-import ReturnVehicle from "./components/return-vehicle";
+import ReturnVehicle from "./components/return/return-vehicle";
+import MyProfile from "./components/user/user";
 
 const App: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const App: React.FC = () => {
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="/rent" element={<RentVehicle />} />
           <Route path="/return" element={<ReturnVehicle />} />
+          <Route path="/profile" element={<MyProfile />} />
         </Route>
       </Routes>
     </Router>

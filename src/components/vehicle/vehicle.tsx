@@ -1,9 +1,9 @@
 
 import React, { useEffect, useState } from "react";
-import { Vehicle } from "../models/vehicle";
-import { getAllVehicles } from "../service/vehicle-service";
 import "./vehicles.css";
 import { useNavigate } from "react-router-dom";
+import { getAllVehicles } from "../../service/vehicle-service";
+import { Vehicle } from "../../models/vehicle";
 
 const Vehicles: React.FC = () => {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
