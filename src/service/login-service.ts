@@ -20,7 +20,7 @@ const LoginService=()=>{
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (credentials.email && credentials.password) {
-        const res = await fetch(`${BASE_URL}/login`, {
+        const res = await fetch(`${BASE_URL}customers/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(credentials),
