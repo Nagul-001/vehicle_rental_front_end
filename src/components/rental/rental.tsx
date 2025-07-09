@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { RentalModel } from "../../models/rental";
 import { CustomerModel} from "../../models/customer";
-import { getAllVehicles } from "../../service/vehicle-service";
+import { VehicleService } from "../../service/vehicle-service";
 import { createRental } from "../../service/rental-service";
 import "./rental.css";
 import { useLocation } from "react-router-dom";

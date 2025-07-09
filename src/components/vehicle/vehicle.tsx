@@ -1,28 +1,31 @@
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./vehicles.css";
-import { useNavigate } from "react-router-dom";
-import { getAllVehicles } from "../../service/vehicle-service";
-import { VehicleInterface } from "../../models/vehicle";
+import VehicleService from "../../service/vehicle-service";
+
 
 
 const Vehicles: React.FC = () => {
-  const [vehicles, setVehicles] = useState<VehicleInterface.Vehicle[]>([]);
-  const navigate = useNavigate()
+  const {
+    handleNavigateRent,
+    vehicles
+  }=VehicleService()
+  // const [vehicles, setVehicles] = useState<VehicleInterface.Vehicle[]>([]);
+  // const navigate = useNavigate()
 
-  useEffect(() => {
-    const fetchVehicles = async () => {
-      const data = await getAllVehicles();
-      setVehicles(data);
-    };
+  // useEffect(() => {
+  //   const fetchVehicles = async () => {
+  //     const data = await getAllVehicles();
+  //     setVehicles(data);
+  //   };
 
-    fetchVehicles();
-  }, []);
+  //   fetchVehicles();
+  // }, []);
 
-  const handleNavigateRent = (vehicleId:number) => {
-    console.log(vehicleId)
-    navigate("/rent", { state: { vehicleId } });
-  }
+  // const handleNavigateRent = (vehicleId:number) => {
+  //   console.log(vehicleId)
+  //   navigate("/rent", { state: { vehicleId } });
+  // }
 
   return (
     <div className="vehicles-container">
